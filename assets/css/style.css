@@ -1,0 +1,88 @@
+/* Dashboards style */
+
+.dashboard-post {
+	height:100px;
+	padding:10px 0;
+	display: flex;
+	color:white;
+	justify-content: space-around;
+}
+
+.dashboard-post.blue {
+	background: #347ab6;
+}
+
+.dashboard-post.green {
+	background: #5ab75e;
+}
+
+.dashboard-post i{
+	font-size:80px;
+}
+
+.dash-spans{
+	display: flex;
+	flex-direction: column;
+	text-align: right;
+}
+
+.dash-spans .count{
+	font-size:40px;
+}
+
+/* Table style */
+#dtBasicExample_filter {
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+	justify-content: flex-end;
+}
+
+#search-tasks{
+	width:40%;
+	margin-left: 15px;
+}
+th::after {
+	font-family: "Font Awesome 5 Free"; 
+	font-weight: 400; 
+	content:"\f0dc";
+	float:right;
+}
+
+th.asc::after {
+	font-family: "Font Awesome 5 Free"; 
+	font-weight: 400; 
+	content:"\f0de";
+	float:right;
+}
+
+th.desc::after {
+	font-family: "Font Awesome 5 Free"; 
+	font-weight: 400; 
+	content:"\f0dd";
+	float:right;
+}
+
+
+/* Style Popup */
+
+.tasks-form .modal-body{
+	display: flex;
+	flex-direction: column;
+}
+
+.task-title,.freelancer-selection{
+	align-self: center;
+	margin-bottom: 10px;
+}
+
+.add_btn{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 10px;
+}
+
+.title-creation, .freelancer-choose{
+	font-weight: bold;
+	margin-right: 10px;
+}
