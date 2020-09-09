@@ -179,14 +179,6 @@ function add_new_column($cols) {
 add_filter( 'cn_tasks_tbody_rows', 'change_cols');
 
 function change_cols ($rows) {
-   /*if ($posts) {
-            foreach ($posts as $post) {
-               $task_id=$posts[0];
-               $fl_id=get_post_meta(ltrim($posts[0], $posts[0][0]))['freelancer_key'][0];
-               $fl_name=["ID" => $task_id,
-                           "Freelancer" => get_the_title($fl_id)];
-            }
-        }*/
         if ($rows) {
             foreach ($rows as &$row) {
               $row[3]=$row[2];
@@ -195,9 +187,6 @@ function change_cols ($rows) {
      }
 
         return $rows;
-        //echo count($posts);
-        //echo "Hello";
-        //$cols = apply_filters('cn_tasks_tbody_row_cols', $cols, $task);
         
 }
 
@@ -273,7 +262,7 @@ add_action( 'wp_ajax_task_addpost', 'task_addpost' );
 
 /* 8.Add dashboard */
 
-function wpb_demo_shortcode() { 
+function dashboard_shortcode() { 
    $params =[
       ["type"=>"freelancers",
        "color"=>"blue",
@@ -292,18 +281,16 @@ foreach ($params as $key) {
                     'publish_status' => 'published',
                  );
  $query = new WP_Query($args);
- if($query->have_posts()) :
    $count = $query->found_posts;
    $result .= '<div class="col-lg-3">';
         $result .= '<div class="dashboard-post ' . $key['color'] . '"><i class="fa ' . $key['icon'] . '"></i><div class="dash-spans"><span class="count">' . $count . '</span><span>'. $key['name'] .'</span></div></div>';
         $result .= '</div>';
    wp_reset_postdata();
-endif;   
 }
 return $result;
 } 
 // register shortcode
-add_shortcode('cn_dashboard', 'wpb_demo_shortcode'); 
+add_shortcode('cn_dashboard', 'dashboard_shortcode'); 
 
 
 
